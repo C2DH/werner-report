@@ -1,0 +1,68 @@
+<meta charset='utf-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<title>{% if page.title %}{{page.title}} · {% endif %}{{site.title}}</title>
+<link rel="stylesheet" href="{{ site.baseurl}}/assets/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&display=swap" rel="stylesheet">
+<style>
+  html,body{
+    height: 100%;
+    margin: 0;
+  }
+  body{
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: black;
+  }
+  a{
+    text-decoration: underline;
+    color: black;
+  }
+  a.nav-link{
+    white-space: nowrap;
+  }
+  a.nav-link.active{
+    color: blue;
+    text-decoration: none;
+  }
+  .text-normalize{
+    font-size: inherit;
+  }
+  .content{
+    min-height: 100%;
+  }
+  .content > .content-inside{
+    padding: 0px;
+    padding-bottom: 200px;
+  }
+  .footer {
+    height: 200px;
+    margin-top: -200px;
+  }
+  .card-columns{
+    column-count: 2;
+  }
+  .card{
+    border-color: transparent;
+  }
+  .card .card-body{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .card > img {
+    -webkit-filter: url(#monochrome);
+    filter:  url(#monochrome);
+  }
+  aside{
+    min-width: 200px;
+  }
+  code{
+    color: blue;
+  }
+  .defs-only{
+    display: none;
+  }
+
+  .bg-white{
+    background-color: white;
+  }
+</style>

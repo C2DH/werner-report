@@ -1,0 +1,22 @@
+<!-- requires: nav_item variable, cfr navigation.html -->
+<li class='nav-item'>
+  {% if page.ref == nav_item.ref %}
+    {% assign is_active = true %}
+  {% else %}
+    {% assign is_active = false %}
+
+    {% if page.categories contains nav_item.ref %}
+      {% assign is_active = true %}
+      {% assign is_expanded = true %}
+    {% else %}
+      {% assign is_active = false %}
+      {% assign is_expanded = false %}
+    {% endif %}
+  {% endif %}
+  <!-- post categories: highlight current category -->
+
+  <a class="nav-link d-inline-block {% if is_active %} active {% endif %}" href="{{site.baseurl}}{{ nav_item.url }}">
+    {{ nav_item.title }}
+     <!-- ({{ nav_item.ref }}-{{page.ref}}-{{is_active}}) -->
+  </a>
+</li>
