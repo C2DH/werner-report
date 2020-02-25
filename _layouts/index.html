@@ -1,14 +1,33 @@
----
-layout: default
----
-{% assign parts = page.content | split: site.excerpt_separator %}
+<!DOCTYPE html>
+<html lang='{{ page.lang | default: site.lang }}'>
+  <head>
+    {% include head.html %}
+  </head>
 
-<h1 class="mt-4 py-2 ">
-  {{ parts | first | markdownify}}
-</h1>
+  <body class="{{page.ref}}">
+    <div class="background-fullscreen position-fixed h-100 w-100">
+      <div class="position-absolute h-100 w-50" style="background-image: url(https://europa.eu/euroat20/static/126b8c94517d9c5310acff697c485d04/e2772/09360c6153dda740ae835119533cffff.jpg)">
+      </div>
+      <div class="position-absolute h-100 w-50" style="left: 50%; background-image: url(https://europa.eu/euroat20/static/ea778f949d68cb8c9630e1d13d453b3c/e2772/bcf458f935aaa377803383ece24c6461.jpg)">
+      </div>
+    </div>
 
-<blockquote>
-  {{ parts | last }}
-</blockquote>
+    <div class="container-fluid">
+      <div class="p-5">
+    {% include navigation.html %}
+      </div>
+    </div>
+    <svg class="defs-only">
+      <filter id="monochrome" color-interpolation-filters="sRGB"
+              x="0" y="0" height="100%" width="100%">
+        <feColorMatrix type="matrix"
+        values="0.80 0 0 0   -0.40
+          0.95 0 0 0  -0.10
+         -0.20 0 0 0   0.65
+            0  0 0 1   0" />
+      </filter>
+    </svg>
 <script src="assets/js/d3.custom.min.js"></script>
 <script src="assets/js/runtime.js"></script>
+</body>
+</html>
