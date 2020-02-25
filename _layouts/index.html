@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{% assign parts = page.content | split: site.excerpt_separator %}
+
+<h1 class="mt-4 py-2 ">
+  {{ parts | first | markdownify}}
+</h1>
+
+<blockquote>
+  {{ parts | last }}
+</blockquote>
+<script src="assets/js/d3.custom.min.js"></script>
+<script src="assets/js/runtime.js"></script>

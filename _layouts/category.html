@@ -1,0 +1,9 @@
+---
+layout: columns
+---
+
+<!-- all posts in this category will be inside .class-->
+{% assign category_posts = site.posts|where:'category',page.ref %}
+{% for post in category_posts %}
+  {% include post.html %}
+{% endfor %}

@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+
+
+{% assign parts = page.content | split: site.excerpt_separator %}
+
+<h1 class="mt-4 py-2 ">
+  {{ parts | first | markdownify}}
+</h1>
+
+<div class="card-columns mt-4">
+  {{ content }}
+</div>
+
+</div>
+<blockquote>
+  {{ parts | last }}
+</blockquote>

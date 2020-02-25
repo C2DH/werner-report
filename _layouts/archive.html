@@ -1,0 +1,19 @@
+---
+layout: default
+---
+{% assign parts = page.content | split: site.excerpt_separator %}
+
+<h1 class="mt-4 py-2 ">
+  {{ parts | first | markdownify}}
+</h1>
+
+<div class="card-columns mt-4">
+  <!-- all posts in this category -->
+  {% assign all_posts = site.posts %}
+  {% for post in all_posts %}
+    {% include post.html %}
+  {% endfor %}
+</div>
+<blockquote>
+  {{ parts | last }}
+</blockquote>
